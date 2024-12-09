@@ -1,23 +1,22 @@
 <template>
     <div class="my-component">
-        <h4>{{ title }}</h4>
-        <div class="quadrado"></div>
+        <span>@{{ event.time }} on {{ event.date }}</span>
+        <h4>{{ event.title }}</h4>
+        <BaseIcon name="users" />
+        <span>{{ event.attendees.length }} attending</span>
     </div>
 </template>
 
 <script lang="ts">
 export default {
-    data() {
-        return {
-            title: 'Park Cleanup',
-        }
+    props: {
+        event: Object,
     },
 }
 </script>
 
 <style lang="scss" scoped>
 .my-component {
-    background: red;
     h4 {
         color: $blue;
     }
